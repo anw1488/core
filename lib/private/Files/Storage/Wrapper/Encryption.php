@@ -1028,6 +1028,11 @@ class Encryption extends Wrapper {
 		return false;
 	}
 
+	protected function deleteAllFileKeys($path) {
+		$fullPath = $this->getFullPath($path);
+		return $this->keyStorage->deleteAllFileKeys($fullPath);
+	}
+
 	/**
 	 * check if path points to a files version
 	 *
